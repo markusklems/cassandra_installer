@@ -14,6 +14,7 @@ curl -s http://opscenter.datastax.com/debian/repo_key | sudo apt-key add -
 curl -s http://installer.datastax.com/downloads/ubuntuarchive.repo_key | sudo apt-key add -
 echo "deb http://archive.canonical.com/ubuntu precise partner" | sudo tee -a /etc/apt/sources.list.d/java.sources.list
 sudo echo "sun-java6-bin shared/accepted-sun-dlj-v1-1 boolean true" | sudo debconf-set-selections
+sleep 5
 sudo apt-get update -y
 # Remove openjdk.
 sudo apt-get purge -y openjdk-6-jre-lib
