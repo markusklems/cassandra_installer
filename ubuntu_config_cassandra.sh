@@ -4,14 +4,14 @@
 ## Tested with Ubuntu 11.04.
 ## No warranties.
 
-mntpoint=${1:-/mnt}
+#mntpoint=${1:-/mnt}
 
 # Create directories.
 sudo mkdir /var/lib/cassandra
 sudo mkdir /var/lib/cassandra/data
 sudo mkdir /var/lib/cassandra/commitlog
 sudo mkdir /var/lib/cassandra/saved_caches
-sudo ln -s $mntpoint /var/lib/cassandra
+#sudo ln -s $mntpoint /var/lib/cassandra
 sudo mkdir /var/log/cassandra
 sudo mkdir /var/run/cassandra
 
