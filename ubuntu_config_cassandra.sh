@@ -8,9 +8,9 @@
 #myuser=`whoami`
 
 # Delete directories
-sudo rm -Rf /var/lib/cassandra
-sudo rm -Rf /var/log/cassandra
-sudo rm -Rf /var/run/cassandra
+#sudo rm -Rf /var/lib/cassandra
+#sudo rm -Rf /var/log/cassandra
+#sudo rm -Rf /var/run/cassandra
 
 # (Re-)create directories.
 sudo mkdir /var/lib/cassandra
@@ -29,12 +29,11 @@ sudo sed -i -e "s|ulimit -l unlimited|#ulimit -n \"\$FD_LIMIT\"|" /etc/init.d/ca
 sudo sed -i -e "s|ulimit -n \"\$FD_LIMIT\"|#ulimit -n \"\$FD_LIMIT\"|" /etc/init.d/cassandra
 
 # Set access permission.
-sudo chown cassandra:cassandra /etc/init.d/cassandra
-sudo chown  cassandra:cassandra /var/run/cassandra
-sudo chown -R cassandra:cassandra /var/lib/cassandra
-sudo chown -R cassandra:cassandra /var/log/cassandra
-sudo chown -R cassandra:cassandra /etc/cassandra
-sudo chown -R cassandra:cassandra /usr/share/cassandra
-sudo chown cassandra:cassandra /usr/bin/cassandra-*
-sudo chown cassandra:cassandra /usr/sbin/cassandra
-sudo chown cassandra:cassandra /etc/default/cassandra
+#sudo chown cassandra:cassandra /etc/init.d/cassandra
+#sudo chown  cassandra:cassandra /var/run/cassandra
+#sudo chown -R cassandra:cassandra /var/lib/cassandra
+#sudo chown -R cassandra:cassandra /var/log/cassandra
+#sudo chown -R cassandra:cassandra /etc/cassandra
+#sudo chown -R cassandra:cassandra /usr/share/cassandra
+#sudo chown cassandra:cassandra /usr/sbin/cassandra
+#sudo chown cassandra:cassandra /etc/default/cassandra
