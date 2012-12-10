@@ -7,7 +7,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 ## INSTALL DEPENDENCIES ##
-ubuntuname=$(sudo cat /etc/lsb-release | echo `grep DISTRIB_CODENAME` | sed 's/DISTRIB_CODENAME=')
+ubuntuname=$(sudo cat /etc/lsb-release | echo `grep DISTRIB_CODENAME` | sed 's/DISTRIB_CODENAME=//')
 sudo apt-get update -y
 echo "deb http://debian.datastax.com/community stable main" | sudo -E tee -a /etc/apt/sources.list
 echo "deb http://archive.canonical.com/ubuntu $ubuntuname partner" | sudo tee -a /etc/apt/sources.list.d/java.sources.list
