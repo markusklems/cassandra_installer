@@ -32,3 +32,4 @@ sudo sed -i -e "s|ulimit -n \"\$FD_LIMIT\"|#ulimit -n \"\$FD_LIMIT\"|" /etc/init
 sudo chown  -R cassandra:cassandra /var/run/cassandra
 sudo chown -R cassandra:cassandra /var/lib/cassandra
 sudo chown -R cassandra:cassandra /var/log/cassandra
+sudo chmod 777 -R /var/run/*
