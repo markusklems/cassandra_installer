@@ -5,6 +5,7 @@
 ## No warranties.
 
 #mntpoint=${1:-/mnt}
+myuser=`whoami`
 
 # Create directories.
 sudo mkdir /var/lib/cassandra
@@ -23,12 +24,12 @@ sudo sed -i -e "s|ulimit -l unlimited|#ulimit -n \"\$FD_LIMIT\"|" /etc/init.d/ca
 sudo sed -i -e "s|ulimit -n \"\$FD_LIMIT\"|#ulimit -n \"\$FD_LIMIT\"|" /etc/init.d/cassandra
 
 # Set access permission.
-sudo chown -R cassandra:cassandra /etc/init.d/cassandra
-sudo chown -R cassandra:cassandra /var/run/cassandra
-sudo chown -R cassandra:cassandra /var/lib/cassandra
-sudo chown -R cassandra:cassandra /var/log/cassandra
-sudo chown -R cassandra:cassandra /etc/cassandra
-sudo chown -R cassandra:cassandra /usr/share/cassandra
-sudo chown -R cassandra:cassandra /usr/bin/cassandra-*
-sudo chown -R cassandra:cassandra /usr/sbin/cassandra
-sudo chown -R cassandra:cassandra /etc/default/cassandra
+sudo chown -R $myuser /etc/init.d/cassandra
+sudo chown -R $myuser /var/run/cassandra
+sudo chown -R $myuser /var/lib/cassandra
+sudo chown -R $myuser /var/log/cassandra
+sudo chown -R $myuser /etc/cassandra
+sudo chown -R $myuser /usr/share/cassandra
+sudo chown -R $myuser /usr/bin/cassandra-*
+sudo chown -R $myuser /usr/sbin/cassandra
+sudo chown -R $myuser /etc/default/cassandra
