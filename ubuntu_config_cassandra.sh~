@@ -11,7 +11,7 @@ sudo mkdir /var/lib/cassandra
 sudo mkdir /var/lib/cassandra/data
 sudo mkdir /var/lib/cassandra/commitlog
 sudo mkdir /var/lib/cassandra/saved_caches
-sudo ln -s /var/lib/cassandra $mntpoint
+sudo ln -s $mntpoint /var/lib/cassandra
 sudo mkdir /var/log/cassandra
 sudo mkdir /var/run/cassandra
 
