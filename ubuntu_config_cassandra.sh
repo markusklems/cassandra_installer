@@ -5,7 +5,7 @@
 ## No warranties.
 
 #mntpoint=${1:-/mnt}
-myuser=`whoami`
+#myuser=`whoami`
 
 # Delete directories
 sudo rm -Rf /var/lib/cassandra
