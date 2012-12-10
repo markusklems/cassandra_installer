@@ -7,9 +7,10 @@
 export DEBIAN_FRONTEND=noninteractive
 
 ## INSTALL DEPENDENCIES ##
+ubuntuname=$(sudo cat /etc/lsb-release | echo `grep DISTRIB_CODENAME` | sed 's/DISTRIB_CODENAME=')
 sudo apt-get update -y
 echo "deb http://debian.datastax.com/community stable main" | sudo -E tee -a /etc/apt/sources.list
-echo "deb http://archive.canonical.com/ubuntu natty partner" | sudo tee -a /etc/apt/sources.list.d/java.sources.list
+echo "deb http://archive.canonical.com/ubuntu $ubuntuname partner" | sudo tee -a /etc/apt/sources.list.d/java.sources.list
 sudo echo "sun-java6-bin shared/accepted-sun-dlj-v1-1 boolean true" | sudo debconf-set-selections
 sudo apt-get update -y
 sleep 1
