@@ -59,7 +59,7 @@ sudo apt-get update -y
 
 ## OS SETUP ##
 # Avoid OS security limits to become a scalability bottleneck.
-sudo rm /etc/security/limits.conf
+#sudo rm /etc/security/limits.conf
 cat >limits.conf <<END_OF_FILE
 * soft nofile 32768
 * hard nofile 32768
