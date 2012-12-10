@@ -1,7 +1,7 @@
 #!/bin/sh -ex
 ## Install Apache Cassandra and dependencies.
 ## By Markus Klems (2012).
-## Tested with Ubuntu 11.04.
+## Tested with Ubuntu 11.04, 11.10, adn 12.04.
 ## No warranties.
 
 #mntpoint=${1:-/mnt}
