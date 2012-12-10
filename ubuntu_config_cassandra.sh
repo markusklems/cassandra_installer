@@ -19,10 +19,10 @@ sudo mkdir /var/lib/cassandra/commitlog
 sudo mkdir /var/lib/cassandra/saved_caches
 #sudo ln -s $mntpoint /var/lib/cassandra
 sudo mkdir /var/log/cassandra
-sudo mkdir /var/run/cassandra
+#sudo mkdir /var/run/cassandra
 
 # Replace the location of the pid file in the init script.
-sudo sed -i -e "s|PIDFILE=/var/run/\$NAME.pid|PIDFILE=/var/run/cassandra/\$NAME.pid|" /etc/init.d/cassandra
+#sudo sed -i -e "s|PIDFILE=/var/run/\$NAME.pid|PIDFILE=/var/run/cassandra/\$NAME.pid|" /etc/init.d/cassandra
 # Remove the ulimit command from the init script.
 # We configure the /etc/security/limits.d instead.
 sudo sed -i -e "s|ulimit -l unlimited|#ulimit -n \"\$FD_LIMIT\"|" /etc/init.d/cassandra
