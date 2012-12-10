@@ -7,7 +7,12 @@
 #mntpoint=${1:-/mnt}
 myuser=`whoami`
 
-# Create directories.
+# Delete directories
+sudo rm -Rf /var/lib/cassandra
+sudo rm -Rf /var/log/cassandra
+sudo rm -Rf /var/run/cassandra
+
+# (Re-)create directories.
 sudo mkdir /var/lib/cassandra
 sudo mkdir /var/lib/cassandra/data
 sudo mkdir /var/lib/cassandra/commitlog
