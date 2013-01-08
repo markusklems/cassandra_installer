@@ -87,7 +87,7 @@ curl -s http://installer.datastax.com/downloads/ubuntuarchive.repo_key | sudo ap
 sleep 2
 sudo apt-get update -y
 # Install DataStax Cassandra community edition
-sudo apt-get install -y python-cql dsc1.1
+sudo apt-get install -y python-cql dsc1.2
 sudo service cassandra start
 sudo service cassandra stop
 # Install OpsCenter
