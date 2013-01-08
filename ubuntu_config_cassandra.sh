@@ -5,7 +5,7 @@
 ## No warranties.
 
 #mntpoint=${1:-/mnt}
-#myuser=`whoami`
+myuser=`whoami`
 
 # Delete directories
 #sudo rm -Rf /var/lib/cassandra
@@ -29,7 +29,7 @@ sudo sed -i -e "s|ulimit -l unlimited|#ulimit -n \"\$FD_LIMIT\"|" /etc/init.d/ca
 sudo sed -i -e "s|ulimit -n \"\$FD_LIMIT\"|#ulimit -n \"\$FD_LIMIT\"|" /etc/init.d/cassandra
 
 # Set access permission.
-sudo chown  -R cassandra:cassandra /var/run/cassandra
-sudo chown -R cassandra:cassandra /var/lib/cassandra
-sudo chown -R cassandra:cassandra /var/log/cassandra
+sudo chown  -R $myuser /var/run/cassandra
+sudo chown -R $myuser /var/lib/cassandra
+sudo chown -R $myuser /var/log/cassandra
 sudo chmod 777 -R /var/run/*
