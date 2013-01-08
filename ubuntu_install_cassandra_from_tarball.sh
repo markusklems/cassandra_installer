@@ -82,9 +82,9 @@ sudo swapoff --all
 
 ## INSTALL CASSANDRA ##
 # Install Cassandra from tarball download
-local cassandra_tarball_url=${2:-http://archive.apache.org/dist/cassandra/1.2.0/apache-cassandra-1.2.0-rc2-src.tar.gz}
-local tar_file=`basename $cassandra_tarball_url`
-local curl="curl -L --silent --show-error --fail --connect-timeout 10 --max-time 600 --retry 5"
+cassandra_tarball_url=${2:-http://archive.apache.org/dist/cassandra/1.2.0/apache-cassandra-1.2.0-rc2-src.tar.gz}
+tar_file=`basename $cassandra_tarball_url`
+curl="curl -L --silent --show-error --fail --connect-timeout 10 --max-time 600 --retry 5"
 # any download should take less than 10 minutes
 
 for retry_count in `seq 1 3`;
@@ -103,4 +103,3 @@ fi
 
 tar xzf $tar_file -C /usr/local
 rm -f $tar_file
-
