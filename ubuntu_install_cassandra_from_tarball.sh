@@ -81,16 +81,26 @@ sudo chmod 755 /etc/security/limits.conf
 sudo swapoff --all
 
 ## INSTALL CASSANDRA ##
-curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
-curl -s http://opscenter.datastax.com/debian/repo_key | sudo apt-key add -
-curl -s http://installer.datastax.com/downloads/ubuntuarchive.repo_key | sudo apt-key add -
-sleep 2
-sudo apt-get update -y
-# Install DataStax Cassandra community edition
-sudo apt-get install -y python-cql dsc1.1
-sudo service cassandra start
-sudo service cassandra stop
-# Install OpsCenter
-sudo apt-get -y install opscenter-free
-sudo service opscenterd start
-sudo service opscenterd stop
+# Install Cassandra from tarball download
+local cassandra_tarball_url=${2:-http://archive.apache.org/dist/cassandra/1.2.0/apache-cassandra-1.2.0-rc2-src.tar.gz}
+local tar_file=`basename $cassandra_tarball_url`
+local curl="curl -L --silent --show-error --fail --connect-timeout 10 --max-time 600 --retry 5"
+# any download should take less than 10 minutes
+
+for retry_count in `seq 1 3`;
+do
+  $curl -O $cassandra_tarball_url || true
+
+  if [ ! $retry_count -eq "3" ]; then
+    sleep 10
+  fi
+done
+
+if [ ! -e $tar_file ]; then
+  echo "Failed to download $tar_file. Aborting."
+  exit 1
+fi
+
+tar xzf $tar_file -C /usr/local
+rm -f $tar_file
+
