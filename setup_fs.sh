@@ -1,6 +1,6 @@
 #!/bin/sh -ex
 ## Setup of devices as RAID0 array.
-## By Markus Klems (2012).
+## By Markus Klems (2013).
 ################################
 ### NO WARRANTIES WHATSOEVER ###
 ################################
