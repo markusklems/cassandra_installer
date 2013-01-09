@@ -10,6 +10,7 @@ export DEBIAN_FRONTEND=noninteractive
 ubuntuname=$(sudo cat /etc/lsb-release | echo `grep DISTRIB_CODENAME` | sed 's/DISTRIB_CODENAME=//')
 sudo apt-get update -y
 echo "deb http://debian.datastax.com/community stable main" | sudo -E tee -a /etc/apt/sources.list
+curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
 echo "deb http://archive.canonical.com/ubuntu $ubuntuname partner" | sudo tee -a /etc/apt/sources.list.d/java.sources.list
 sudo echo "sun-java6-bin shared/accepted-sun-dlj-v1-1 boolean true" | sudo debconf-set-selections
 sudo apt-get update -y
@@ -83,6 +84,8 @@ sudo swapoff --all
 ## INSTALL CASSANDRA ##
 # Install Cassandra from tarball download
 cassandra_tarball_url=${2:-http://archive.apache.org/dist/cassandra/1.2.0/apache-cassandra-1.2.0-rc2-bin.tar.gz}
+curl -OL $cassandra_tarball_url
+
 tar_file=`basename $cassandra_tarball_url`
 curl="curl -L --silent --show-error --fail --connect-timeout 10 --max-time 600 --retry 5"
 # any download should take less than 10 minutes
@@ -103,3 +106,6 @@ fi
 
 tar xzf $tar_file -C /usr/local
 rm -f $tar_file
+
+# Create link to JNA
+sudo ln -s /usr/share/java/jna.jar "/usr/local/$tar_file/lib"
