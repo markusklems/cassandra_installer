@@ -20,3 +20,7 @@ sudo keytool -v -importkeystore -srckeystore keystore-jks.p12 -srcstoretype PKCS
 echo "cassandra
 cassandra
 yes" | sudo keytool -import -alias certificatekey -file cert.cer -keystore "$CASSANDRA_HOME/conf/truststore.jks"
+	
+# Replace the cassandra conf files
+cp cassandra-env.sh "$CASSANDRA_HOME/conf/cassandra-env.sh"
+cp cassandra.yaml "$CASSANDRA_HOME/conf/cassandra.yaml"
