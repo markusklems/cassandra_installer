@@ -212,7 +212,7 @@ JVM_OPTS="$JVM_OPTS -XX:+UseCMSInitiatingOccupancyOnly"
 # JVM_OPTS="$JVM_OPTS -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1414"
 
 # Add keystore and truststore JVM params
-JVM_OPTS="$JVM_OPTS -Djavax.net.ssl.trustStore=/usr/local/apache-cassandra-1.2.0-rc2/conf/truststore.jks -Djavax.net.ssl.trustStorePassword=cassandra"
+JVM_OPTS="$JVM_OPTS -Djavax.net.ssl.trustStore=/usr/local/apache-cassandra-1.2.0/conf/truststore.jks -Djavax.net.ssl.trustStorePassword=cassandra"
 
 # Prefer binding to IPv4 network intefaces (when net.ipv6.bindv6only=1). See 
 # http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6342561 (short version:

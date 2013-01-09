@@ -83,7 +83,7 @@ sudo swapoff --all
 
 ## INSTALL CASSANDRA ##
 # Install Cassandra from tarball download
-cassandra_tarball_url=${2:-http://archive.apache.org/dist/cassandra/1.2.0/apache-cassandra-1.2.0-rc2-bin.tar.gz}
+cassandra_tarball_url=${1:-http://archive.apache.org/dist/cassandra/1.2.0/apache-cassandra-1.2.0-bin.tar.gz}
 curl -OL $cassandra_tarball_url
 
 tar_file=`basename $cassandra_tarball_url`
@@ -108,4 +108,4 @@ tar xzf $tar_file -C /usr/local
 rm -f $tar_file
 
 # Create link to JNA
-sudo ln -s /usr/share/java/jna.jar "/usr/local/$tar_file/lib"
+sudo ln -s /usr/share/java/jna.jar /usr/local/apache-cassandra-1.2.0/lib
