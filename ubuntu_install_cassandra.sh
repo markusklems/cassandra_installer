@@ -53,8 +53,10 @@ fi
 
 sudo apt-get update -y
 # Install packages. Fixme: should only install required packages here. Install optional packages with another script.
-sudo apt-get -y install --fix-missing libjna-java htop emacs23-nox sysstat iftop binutils pssh pbzip2 zip unzip ruby openssl libopenssl-ruby curl maven2 ant liblzo2-dev ntp subversion python-pip tree unzip ruby
+sudo apt-get -y install --fix-missing libjna-java htop emacs23-nox sysstat iftop binutils pssh pbzip2 zip unzip ruby openssl libopenssl-ruby curl maven2 ant liblzo2-dev subversion python-pip tree unzip ruby
 sudo apt-get -y install ca-certificates-java icedtea-6-jre-cacao java-common jsvc libavahi-client3 libavahi-common-data libavahi-common3 libcommons-daemon-java libcups2 libjna-java libjpeg62 liblcms1 libnspr4-0d libnss3-1d tzdata-java	
+# NTP should already be installed
+#sudo apt-get -y install ntp
 sudo apt-get update -y
 
 ## OS SETUP ##
