@@ -88,7 +88,7 @@ sleep 2
 sudo apt-get update -y
 sleep 10
 # Install DataStax Cassandra community edition
-sudo apt-get install -y python-cql dsc-full
+sudo apt-get install -y python-cql dsc12
 sudo service cassandra start
 sudo service cassandra stop
 # Install OpsCenter
