@@ -94,6 +94,6 @@ sudo apt-get install -y python-cql dsc12
 sudo service cassandra start
 sudo service cassandra stop
 # Install OpsCenter
-sudo apt-get -y install opscenter-free
-sudo service opscenterd start
-sudo service opscenterd stop
+#sudo apt-get -y install opscenter-free
+#sudo service opscenterd start
+#sudo service opscenterd stop
