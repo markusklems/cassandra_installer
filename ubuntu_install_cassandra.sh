@@ -86,8 +86,9 @@ curl -s http://opscenter.datastax.com/debian/repo_key | sudo apt-key add -
 curl -s http://installer.datastax.com/downloads/ubuntuarchive.repo_key | sudo apt-key add -
 sleep 2
 sudo apt-get update -y
+sleep 10
 # Install DataStax Cassandra community edition
-sudo apt-get install -y python-cql dsc1.1
+sudo apt-get install -y python-cql dsc-full
 sudo service cassandra start
 sudo service cassandra stop
 # Install OpsCenter
